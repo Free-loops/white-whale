@@ -12,5 +12,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang='scss'>
+@import '../assets/css/common.scss';
+.hello {
+  font-size: rem(30);
+}
 </style>
