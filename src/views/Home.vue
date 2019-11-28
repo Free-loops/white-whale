@@ -1,16 +1,21 @@
 <template>
   <div class="home">
-    <HelloWorld/>
+    <myHeader title="小鲸喜"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
+import myHeader from '@/components/header.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    myHeader
   }
 }
 </script>
+<style lang="scss" scoped>
+  .home {
+    height: 100%;
+  }
+</style>

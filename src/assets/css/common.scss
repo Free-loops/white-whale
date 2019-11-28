@@ -1,3 +1,7 @@
 @function rem($px) {
     @return $px / 100 + rem;
 }
+
+html,body {
+    height: 100%;
+}
