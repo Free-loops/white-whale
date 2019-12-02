@@ -6,6 +6,10 @@
       </router-link>
       <mt-button icon="more" slot="right" @click="showMenuFn"></mt-button>
     </mt-header>
+    <mt-actionsheet
+      :actions="actions"
+      v-model="sheetVisible">
+    </mt-actionsheet>
   </div>
 </template>
 
@@ -28,8 +32,13 @@ export default {
   },
   data () {
     return {
-      showMenu: false,
-      popupVisible: false
+      sheetVisible: false,
+      actions: [
+        {name: '规则详情', value: 1, method: this.clickMenu},
+        {name: '交易记录', value: 2, method: this.clickMenu},
+        {name: '意见反馈', value: 3, method: this.clickMenu},
+        {name: '我的客服', value: 4, method: this.clickMenu}
+      ]
     }
   },
   created () {
@@ -39,7 +48,10 @@ export default {
       this.$router.back()
     },
     showMenuFn () {
-      this.popupVisible = true
+      this.sheetVisible = true
+    },
+    clickMenu (v) {
+      console.log(v.name)
     }
   }
 }
